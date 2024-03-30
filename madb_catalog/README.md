@@ -75,10 +75,11 @@ searching, adding, and categorizing movies.
 6) Movie Categories
     > - Movies will be categorized by genres.
     > - Sections like "**Most Liked**," "**Newest**," and "**Genres**" will feature the top 5 movies in each category.
-    &#9888; **Important:** &#9888; The categories should be sorted as follows:
-        **Most Liked** = **MOST_WATCHED**
-        **Newest** = **TOP_RATED**
-        **Genres** = **RECENTLY ADDED**
+
+   - &#9888; **Important:** &#9888; The categories should be sorted as follows:
+     - **Most Liked** = **MOST_WATCHED**
+     - **Newest** = **TOP_RATED**
+     - **Genres** = **RECENTLY ADDED**
 
 #### **Django** technical requirements
 
