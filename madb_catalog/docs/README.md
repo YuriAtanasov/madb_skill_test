@@ -88,31 +88,31 @@
 
 ## Functionalities
 
-- Serve on load  ```bash http://127.0.0.1:8000/```
+- Serve on load  `http://127.0.0.1:8000`
 
-  - / - file located in ```bash {BASE_DIR}/templates/movie_catalog/pages/base.html```
-  - /catalog/ - file located in ```bash {BASE_DIR}/templates/movie_catalog/pages/movie_list.html```
-  - /catalog/<movie_db_id>/ - file located in ```bash {BASE_DIR}/templates/movie_catalog/pages/movies_detail.html```
-  - images for movies - file located in ```bash {BASE_DIR}/templates/movie_catalog/images/movies```
-  - /catalog/favorites/ - file located in ```bash {BASE_DIR}/templates/clients/favorite_movies.html```
-  - /catalog/form_base - file located in ```bash {BASE_DIR}/templates/clients/form_base.html```
-  - /catalog/upload/ - file located in ```bash {BASE_DIR}/templates/clients/add_movies.html```
-  - /about - file located in ```bash {BASE_DIR}/templates/movie_catalog/pages/about_me.html```
-  - /admin/login/ - menu "Login" redirects to ```bash http://127.0.0.1:8000/admin/login/?next=/admin/```
-  - ..search..bar - file located in ```bash {BASE_DIR}/templates/movie_catalog/pages/search.html```
-  - top-rated/ - file located in ```bash {BASE_DIR}/templates/stats/top_rated_.html```
-  - most-watched/ - file located in ```bash {BASE_DIR}/templates/stats/most_watched.html```
-  - recently-added/ - file located in ```bash {BASE_DIR}/templates/stats/recently_added.html```
+  - / - file located in `{BASE_DIR}/templates/movie_catalog/pages/base.html`
+  - /catalog/ - file located in `{BASE_DIR}/templates/movie_catalog/pages/movie_list.html`
+  - /catalog/<movie_db_id>/ - file located in `{BASE_DIR}/templates/movie_catalog/pages/movies_detail.html`
+  - images for movies - file located in `{BASE_DIR}/templates/movie_catalog/images/movies`
+  - /catalog/favorites/ - file located in `{BASE_DIR}/templates/clients/favorite_movies.html`
+  - /catalog/form_base - file located in `{BASE_DIR}/templates/clients/form_base.html`
+  - /catalog/upload/ - file located in `{BASE_DIR}/templates/clients/add_movies.html`
+  - /about - file located in `{BASE_DIR}/templates/movie_catalog/pages/about_me.html`
+  - /admin/login/ - menu "Login" redirects to `http://127.0.0.1:8000/admin/login/?next=/admin`
+  - ..search..bar - file located in `{BASE_DIR}/templates/movie_catalog/pages/search.html`
+  - top-rated/ - file located in `{BASE_DIR}/templates/stats/top_rated_.html`
+  - most-watched/ - file located in `{BASE_DIR}/templates/stats/most_watched.html`
+  - recently-added/ - file located in `{BASE_DIR}/templates/stats/recently_added.html`
 
 - Functional menu
 
-  - HOME -> redirects to ```bash http://127.0.0.1:8000/```
-  - Movies Catalog -> opens movie catalog ```bash http://127.0.0.1:8000/catalog/```
-  - Favorites -> opens user's favorites (requires login) ```bash http://127.0.0.1:8000/catalog/favorites/```
-  - Upload movie -> opens upload form page ```bash http://127.0.0.1:8000/catalog/form_base```
-    - Button at the bottom redirects to ```bash http://127.0.0.1:8000/catalog/upload/``` - form for adding movies
-  - Login - opens Django admin ```bash http://127.0.0.1:8000/admin/login```
+  - HOME -> redirects to `http://127.0.0.1:8000`
+  - Movies Catalog -> opens movie catalog `http://127.0.0.1:8000/catalog`
+  - Favorites -> opens user's favorites (requires login) `http://127.0.0.1:8000/catalog/favorites`
+  - Upload movie -> opens upload form page `http://127.0.0.1:8000/catalog/form_base`
+    - Button at the bottom redirects to `http://127.0.0.1:8000/catalog/upload` - form for adding movies
+  - Login - opens Django admin `http://127.0.0.1:8000/admin/login`
   - Search bar - performs a search by "title" and "genre" in the movie catalog
-  - Top rated movies - opens ```bash http://127.0.0.1:8000/catalog/top-rated/```
-  - Most watched movies - opens ```bash http://127.0.0.1:8000/catalog/most-watched/```
-  - Recently added movies - opens ```bash http://127.0.0.1:8000/catalog/recently-added/```
+  - Top rated movies - opens `http://127.0.0.1:8000/catalog/top-rated`
+  - Most watched movies - opens `http://127.0.0.1:8000/catalog/most-watched`
+  - Recently added movies - opens `http://127.0.0.1:8000/catalog/recently-added`
