@@ -1,0 +1,44 @@
+{% extends "movie_catalog/pages/base.html" %}
+{% block content %}
+    <br><br><br><br>
+    <form method="POST" action="{% url 'catalog:upload' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <style>
+            .form-item {
+                display: flex;
+                align-items: left;
+                margin-bottom: 10px;
+                color: yellow;
+            }
+    
+            .form-item label {
+                margin-right: 10px;
+                width: 150px; /* Adjust the width as needed */
+                text-align: left; /* Align label text to the right */
+            }
+    
+            .form-item input, .form-item select {
+                margin-left: 0px; /* Add space between label and field */
+            }
+        </style>
+        <ul class="">
+            {% for field in form %}
+                <li class="form-item">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                </li>
+            {% endfor %}
+        </ul>
+        <button style="background-color: #008CBA;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;"
+        type="submit">Upload movie title</button>
+    </form>
+{% endblock %}

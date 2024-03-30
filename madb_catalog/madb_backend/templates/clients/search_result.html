@@ -1,0 +1,53 @@
+{% extends "movie_catalog/pages/base.html" %}
+{% block title %}Search{% endblock %}
+{% block content %}
+    <br><br><br>
+    {% if query %}
+        <h2 style="color: black; font-size: 22px;">Searching for word "{{ query }}" using "{{ search_type }}" and found:</h2>
+        {% if results %}
+            <ul>
+                {% for movie in results %}
+                    <br>
+                    <b><p style="color: #BEFF33; font-size: 20px;">| {{ movie.title }} | {{ movie.genre }} | {{ movie.releaseDate }} |</p></b>
+                    <button style="background-color: #008CBA;
+                    border: none;
+                    color: white;
+                    padding: 0px 10px;
+                    text-align: center;
+                    display: inline-block;
+                    font-size: 17px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    border-radius: 5px;"
+                    ><a href="/catalog/{{ movie.id }}" style="text-decoration: none; color: inherit;">View details</a></button>
+                    <button style="background-color: #008CBA;
+                    border: none;
+                    color: white;
+                    padding: 0px 10px;
+                    text-align: center;
+                    display: inline-block;
+                    font-size: 17px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    border-radius: 5px;"
+                    ><a href="{{ movie.trailerLink }}" style="text-decoration: none; color: inherit;" target="blank">Watch trailer</a></button>
+                {% endfor %}
+            <br><br><br><br><br><br><br>
+            <button style="background-color: #008CBA;
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 5px;"
+                ><a href="/catalog/" style="text-decoration: none; color: inherit;"">Back to the catalog page</button>
+            </ul>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+        <h2> 
+    {% endif %}
+{% endblock %}

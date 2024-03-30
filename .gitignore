@@ -1,0 +1,7 @@
+.idea
+.env
+madbenv
+.venv
+__pycache__
+madb_catalog/madb_catalog/__pycache__
+madb_catalog/madb_backend/__pycache__

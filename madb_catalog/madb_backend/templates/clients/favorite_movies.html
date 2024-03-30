@@ -1,0 +1,44 @@
+{% extends 'movie_catalog/pages/base.html' %}
+{% block content %}
+<br><br><br>
+<h2 style="color: #BEFF33; font-size: 30px; text-align: left">&#9733; Your Favorite Movies &#9733;</h2>
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+    {% if favorite_movies %}
+    <ul>
+        {% for favorite_movie in favorite_movies %}
+        <p>&#9733; {{ favorite_movie.movie.title }} ({{ favorite_movie.movie.releaseDate }}) <a href="{% url 'catalog:remove_favorite_movie' favorite_movie.id %}">Remove</a></p>
+        <button style="background-color: #008CBA;
+                    border: none;
+                    color: white;
+                    padding: 0px 10px;
+                    text-align: center;
+                    display: inline-block;
+                    font-size: 17px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    border-radius: 5px;"
+                    ><a href="{{ favorite_movie.movie.trailerLink }}" style="text-decoration: none; color: inherit;" target="blank">Watch trailer</a></button>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <b><p style="color: white; font-size: 20px; text-align: left">No favorite movies added</p><b>
+{% endif %}
+    <br><br><br>
+    <button style="background-color: #008CBA;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;"
+        ><a href="/catalog/" style="text-decoration: none; color: inherit;">Back to the catalog page</button>
+{% endblock %}

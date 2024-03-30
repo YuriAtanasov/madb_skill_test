@@ -1,0 +1,79 @@
+{% extends "movie_catalog/pages/base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yuri's Movie Database Website</title>
+    <style>
+        .movie-item {
+            border: 1px solid #333;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            margin-bottom: 10px; /* Add margin between movie items */
+        }
+        .main {
+            width: 80%;
+            height: 80vh;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .left-column { 
+            float:left; 
+            width: 49.9%;
+        }
+        .right-column { 
+            float:right; 
+            width: 49.9%;
+        }
+        /* Add more styles for other elements as needed */
+    </style>
+</head>
+<body>
+    <br><br>
+    <ul>
+        <br><br>
+        <div id="main">
+            <div style="background-color: black; padding: 20px; border-radius: 10px; text-align: center;">
+                <form method="post" action="{% url 'catalog:add_favorite_movie' movie.id %}">
+                    {% csrf_token %}
+                    <button style="background-color: #008CBA;
+                    border: none;
+                    color: white;
+                    padding: 10px 20px;
+                    text-align: left;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    border-radius: 5px;"
+                    type="submit">&#10025; Mark as Favorite &#10025;</button>
+                </form>
+                <h1>Title: {{ movie.title }}</h1>
+            </div>
+            <div class="left-column">
+                <div class="movie-item">
+                    <h3 style="text-align: center;">Summary</h3>
+                    <div>
+                        <p>{{ movie.movieSummary }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="movie-item">
+                    <h3 style="text-align: center;">Synopsis</h3>
+                    <div>
+                        <p>{{ movie.movieSynopsis }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ul>
+</body>
+</html>
+{% endblock %}

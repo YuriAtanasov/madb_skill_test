@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Yuri's Movie Database Website</title>
+        <style>
+            body {
+                font-family: "Courier New", sans-serif;
+                background-color: #111; 
+                color: #fff; # black = #000, white = #fff
+                margin: 1;
+                padding: 30px;
+                background-image: url('{% static "background.webp" %}');  # background.webp 
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .container {
+                width: 100%;
+                margin: 100;
+                margin: auto;
+                overflow: hidden;
+                text-align: left;
+                color: #000;
+            }
+            .bar {
+                width: 50%;
+                color: #fff;
+                margin: 0;
+                padding: 10px 0;
+                overflow: hidden;
+                text-align: left;
+                float: left;
+                font-size: 17px;
+                display: flex;
+            }
+            .bar b {
+                margin: 0 5px; /* Add margin between buttons */
+            }
+            .bar a {
+                display: inline-block;
+                background-color: #555; /* Button background color */
+                border: 1px solid #ccc; /* Button border */
+                color: white; /* Text color of the buttons */
+                padding: 10px 20px; /* Padding inside each button */
+                text-align: left;
+                text-decoration: none;
+                transition: background-color 0.3s; /* Smooth transition on hover */
+            }
+            .bar a:hover {
+                background-color: #777; /* Background color on hover */
+            }
+            .search-bar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+            }
+            .search-bar input[type="text"] {
+                padding: 8px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 5px 0 0 5px;
+            }
+            .search-bar button {
+                padding: 8px 15px;
+                font-size: 16px;
+                background-color: #007bff;
+                color: #fff;
+                border: 1px solid #007bff;
+                border-radius: 0 5px 5px 0;
+                cursor: pointer;
+            }
+            .search-bar button:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+            /* Add more styles for other elements as needed */
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1><i>Welcome to the theatre</i></h1>
+        </div>
+    </body>
+    <body>
+        <nav>
+            <div class="bar">
+                <b><a href="/">Home</a></b>
+                <b><a href="/catalog/">Movies Catalog</a></b>
+                <b><a href="/catalog/favorites">Favorites</a></b>
+                <b><a href="/catalog/form_base">Upload movie</a></b>
+                <b><a href="/about">About me</a></b>
+            </div>
+            <div class="search-bar">
+                <form method="GET" action="{% url 'catalog:search' %}">
+                    <select name="search_type">
+                        <option value="title">Title</option>
+                        <option value="genre">Genre</option>
+                    </select>
+                    <input type="text" name="q" placeholder="Search for a movie...">
+                    <button type="submit" 
+                        style="background-color: #008CBA;
+                        border: none;
+                        color: white;
+                        padding: 10px 20px;
+                        text-align: center;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                        border-radius: 5px;">
+                        Search</button>
+                </form>
+                <div class="bar">
+                    <b><a href="/admin/login">Login</a></b>
+                </div>
+            </div>
+            <br>
+            <div class="bar"> <!-- Second line of bars -->
+                <!-- Add additional navigation links here -->
+                <b><a href="/catalog/top-rated/">Top rated movies</a></b>
+                <b><a href="/catalog/most-watched/">Most watched movies</a></b>
+                <b><a href="/catalog/recently-added/">Recently added movies</a></b>
+            </div>
+        </nav>
+    </body>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</html>

@@ -1,0 +1,35 @@
+{% extends "movie_catalog/pages/base.html" %}
+{% block content %}
+<br><br><br>
+{% if avail_movies %}
+    <p style="color: #BEFF33; font-size: 30px; text-align: left">&#8593; Uploaded movies &#8593;</p>
+    <table>
+        <tr>
+            <th style="color: #BEFF33; font-size: 22px;">Title</th>
+            <th style="color: #BEFF33; font-size: 22px;">Genre</th>
+            <th style="color: #BEFF33; font-size: 22px;">Year</th>
+        </tr>
+        {% for movie in avail_movies %}
+        <tr>
+            <td style="color: white; font-size: 20px; text-align: left; font-weight: bold;"> | {{ movie.title }} </td>
+            <td style="color: white; font-size: 20px; text-align: left font-weight: bold;"> | {{ movie.genre }} </td>
+            <td style="color: white; font-size: 20px; text-align: left font-weight: bold;"> | {{ movie.releaseDate }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No movies are available.</p>
+{% endif %}
+<br><br>
+<p><button style="background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;"
+    ><a href = "upload/" style="text-decoration: none; color: inherit;">Add new movie</a></button></p>
+{% endblock %}

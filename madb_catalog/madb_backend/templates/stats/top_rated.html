@@ -1,0 +1,10 @@
+{% extends 'movie_catalog/pages/base.html' %}
+{% block content %}
+<br><br><br>
+<p style="color: #BEFF33; font-size: 30px; text-align: left">&#128293; Top Rated Movies &#128293;</p>
+<ul>
+    {% for movie in movies %}
+        <p style="color: white; font-size: 20px; text-align: left; font-weight: bold;">{{ movie.title }} (Rating: {{ movie.userRating }})</p>
+    {% endfor %}
+</ul>
+{% endblock %}
